@@ -1,7 +1,7 @@
 # workout-tracker
 A website that is able to track your daily workouts
 
-Website here: 
+Website here: https://exercise-workout-19283746.herokuapp.com/
 
 ## Description
 As a user, you are able to view your current workout progress. You can then add new exercises on the go. If you're finished with your workout, you can then create a new workout and add exercises from there.
