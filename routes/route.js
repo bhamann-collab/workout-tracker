@@ -16,7 +16,6 @@ router.put('/api/workouts/:params', (req, res) => {
     Exercise.findOne({ day: {$gte: start}}).then(function(docs) {
         //Pushing new exercise to array
         docs.exercises.push(req.body)
-        console.log(docs.exercises)
 
         docs.save(function (err) {
             if(err) {
@@ -26,12 +25,8 @@ router.put('/api/workouts/:params', (req, res) => {
 
         res.send(docs.exercises);
     })
-
-    // let exercise = new Exercise(req.body)
-    // exercise.save()
-
-    //res.redirect()
 })
+
 
 router.get('/api/workouts', ({ body }, res) => {
     Exercise.find()
@@ -43,5 +38,16 @@ router.get('/api/workouts', ({ body }, res) => {
         res.status(400).json(err)
     })
 }) 
+
+router.get('/api/workouts/range', ({ body }, res) => {
+    Exercise.find()
+    .then(dbTransaction => {
+        console.log(dbTransaction)
+        res.json(dbTransaction);
+    })
+    .catch(err => {
+        res.status(400).json(err)
+    })
+})
 
 module.exports = router;
