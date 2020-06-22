@@ -15,6 +15,10 @@ router.put('/api/workouts/:params', (req, res) => {
     console.log(req.body)
     Exercise.findOne({ day: {$gte: start}}).then(function(docs) {
         //Pushing new exercise to array
+        if(docs === null) {
+            docs = new Exercise()
+        } 
+        
         docs.exercises.push(req.body)
 
         docs.save(function (err) {
