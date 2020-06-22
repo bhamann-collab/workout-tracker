@@ -10,14 +10,18 @@ mongoose.Promise = global.Promise
 //Schema
 
 let ExerciseSchema = new Schema({
-    type: String,
-    name: String,
-    weight: Number,
-    sets: Number,
-    reps: Number,
-    duration: Number
+    day: Number,
+    exercises: [{
+        // type: String,
+        // name: String,
+        // duration: Number,
+        // //weight: Number,
+        // //reps: Number,
+        // //sets: Number,
+        // distance: Number
+    }]
 })
 
-const Exercise = mongoose.model('exercise', ExerciseSchema)
+const Exercise = mongoose.model('exercises', ExerciseSchema, 'exercises')
 
 module.exports = Exercise;

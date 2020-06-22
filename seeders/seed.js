@@ -132,6 +132,17 @@ let workoutSeed = [
         distance: 2
       }
     ]
+  },
+  {
+    day: new Date().setDate(new Date().getDate()),
+    exercises: [
+      {
+        type: "resistance",
+        name: "Bench",
+        duration: 30,
+        distance: 2
+      }
+    ]
   }
 ];
 
